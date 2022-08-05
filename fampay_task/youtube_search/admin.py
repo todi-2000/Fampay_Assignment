@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from youtube_search.models import Video, Thumbnail, APIKey
 
-# # Register your models here.
+# Register your models here.
 class ThumbnailInline(admin.TabularInline):
     model = Thumbnail
     fields = ['url', 'size']

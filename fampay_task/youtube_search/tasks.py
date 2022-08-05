@@ -8,7 +8,7 @@ from youtube_search.models import Video, Thumbnail
 from youtube_search.utils import youtube_videos
 
 @shared_task(name="add_video_db")
-def add_video_db(self):
+def add_video_db():
     """
     Fetch video using youtube api and add it to the db.
     """

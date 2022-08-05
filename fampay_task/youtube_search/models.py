@@ -1,11 +1,6 @@
 from django.db import models
 
 # Create your models here.
-SIZE_CHOICES =(
-    ("default", "default"),
-    ("medium", "medium"),
-    ("high", "high"),
-)
 
 class Video(models.Model):
     title = models.CharField(max_length=255)
@@ -22,6 +17,12 @@ class Video(models.Model):
         return self.title
 
 class Thumbnail(models.Model):
+
+    SIZE_CHOICES = (
+        ("default", "default"),
+        ("medium", "medium"),
+        ("high", "high"),
+    )
     video = models.ForeignKey(Video, on_delete=models.CASCADE, related_name='thumbnails')
     size = models.CharField(max_length=255, choices=SIZE_CHOICES)
     url = models.URLField()

@@ -25,8 +25,9 @@ def debug_task(self):
     print("Request: {0!r}".format(self.request))
 
 app.conf.beat_schedule = {
+    # Fetching the youtube videos every 5 mins
     "add_video_db_task": {
-        "task": 'youtube_search.tasks.add_video_db',
-        "schedule": crontab(minute="*/1")
+        "task": 'add_video_db',
+        "schedule": crontab(minute="*/5")
     },
 }
