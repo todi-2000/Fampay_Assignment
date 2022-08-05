@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from youtube_search.models import Video, Thumbnail
+from youtube_search.models import Video, Thumbnail, APIKey
 
 class VideoGetSerializer(serializers.ModelSerializer):
     """
@@ -30,3 +30,12 @@ class ThumbnailSerializer(serializers.ModelSerializer):
         model = Thumbnail
         fields = ["id", "size", "url"]
 
+
+class APIKeySerializer(serializers.ModelSerializer):
+    """
+    Serializer for APIKey Model
+    """
+
+    class Meta:
+        model = APIKey
+        fields = "__all__"
