@@ -11,7 +11,8 @@ def youtube_videos():
     if not len(api_keys):
         return {}
     try:
-        published_after = (datetime.utcnow() - timedelta(minutes=5)).isoformat() + "Z"
+        published_after = (datetime.utcnow() - timedelta(minutes=4)).isoformat() + "Z"
+        published_before = (datetime.utcnow()).isoformat() + "Z"
         params = {
             "part": "snippet",
             "q": SEARCH_QUERY,
@@ -19,6 +20,7 @@ def youtube_videos():
             "order": "date",
             "maxResults": MAX_RESULTS,
             "publishedAfter": published_after,
+            "publishedBefore": published_before
         }
         response = requests.get(API_URL[0], params)
         if response.status_code == 200:
