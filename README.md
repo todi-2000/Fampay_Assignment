@@ -106,8 +106,8 @@ $ docker-compose up -d --build
 
 - In case of any errors for port already in use, run the following scripts to kill all running processes.
 ```
-$ chmod 775 ./docker-fresh-start.sh
-./docker-fresh-start.sh
+$ chmod 775 ../docker-fresh-start.sh
+../docker-fresh-start.sh
 ```
 
 # API Endpoints  
